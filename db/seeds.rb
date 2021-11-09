@@ -4,4 +4,16 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.firs
+
+require 'faker'
+
+puts 'Creating 10 fake posts...'
+10.times do
+  article = Article.new(
+    title: Faker::Movie.title, 
+    content: Faker::Movie.quote,
+  )
+  article.save!
+end
+puts 'Finished!'
